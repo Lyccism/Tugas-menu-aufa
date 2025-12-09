@@ -51,6 +51,14 @@ int main()
                 cout << "==================================" << endl;
                 cout << "Pilih Sub Menu (1-5) :" << endl;
                 cin >> submenu1;
+                
+                if (cin.fail() || submenu1 < 1 || submenu1 > 5)
+                {
+                    cout << "Input tidak valid! Harap masukkan angka 1-5." << endl;
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    continue;
+                }
 
                 if (submenu1 == 1) {
                     int angkaMenu;
@@ -62,6 +70,14 @@ int main()
                         cout << "3. Kembali Ke Menu Sebelumnya" << endl;
                         cout << "Pilih (1-3)  :" << endl;
                         cin >> angkaMenu;
+                        
+                        if (cin.fail() || angkaMenu < 1 || angkaMenu > 3)
+                        {
+                            cout << "Input tidak valid! Harap masukkan angka 1-3." << endl;
+                            cin.clear();
+                            cin.ignore(1000, '\n');
+                            continue;
+                        }
 
                         if (angkaMenu == 1) {
                             int subpilihan1;
@@ -74,6 +90,14 @@ int main()
                                 cout << "4. Kembali Ke Menu Sebelumnya" << endl;
                                 cout << "Pilih (1-4)  : "<< endl;
                                 cin >> subpilihan1;
+                                
+                                if (cin.fail() || subpilihan1 < 1 || subpilihan1 > 4)
+                                {
+                                    cout << "Input tidak valid! Harap masukkan angka 1-4." << endl;
+                                    cin.clear();
+                                    cin.ignore(1000, '\n');
+                                    continue;
+                                }
 
                                 if (subpilihan1 == 1) {
                                     
@@ -216,6 +240,11 @@ int main()
                                         }
                                     }
                                 }
+                                
+                                cout << "\nTekan Enter untuk melanjutkan...";
+                                cin.ignore();
+                                cin.get();
+                                
                             } while (subpilihan1 != 4);
                         }
                         else if (angkaMenu == 2) {
@@ -228,6 +257,14 @@ int main()
                                 cout << "3. Kembali Ke Menu Sebelumnya" << endl;
                                 cout << "Pilih (1-3)  : " << endl;
                                 cin >> subpilihan2;
+                                
+                                if (cin.fail() || subpilihan2 < 1 || subpilihan2 > 3)
+                                {
+                                    cout << "Input tidak valid! Harap masukkan angka 1-3." << endl;
+                                    cin.clear();
+                                    cin.ignore(1000, '\n');
+                                    continue;
+                                }
                                 
                                 if (subpilihan2 == 1){
                                     float a, b;
@@ -303,8 +340,22 @@ int main()
                                         }
                                     }
                                 }
+                                
+                                if (subpilihan2 != 3) {
+                                    cout << "\nTekan Enter untuk melanjutkan...";
+                                    cin.ignore();
+                                    cin.get();
+                                }
+                                
                             } while (subpilihan2 != 3);
                         }
+                        
+                        if (angkaMenu != 3) {
+                            cout << "\nTekan Enter untuk melanjutkan...";
+                            cin.ignore();
+                            cin.get();
+                        }
+                        
                     } while (angkaMenu != 3);
                 }
                 else if (submenu1 == 2) {
@@ -318,6 +369,14 @@ int main()
                         cout << "3. Kembali Ke Menu Sebelumnya" << endl;
                         cout << "Pilih (1-3) : " << endl;
                         cin >> golchar;
+                        
+                        if (cin.fail() || golchar < 1 || golchar > 3)
+                        {
+                            cout << "Input tidak valid! Harap masukkan angka 1-3." << endl;
+                            cin.clear();
+                            cin.ignore(1000, '\n');
+                            continue;
+                        }
                         
                         if (golchar == 1) {
                             char c, g;
@@ -339,6 +398,13 @@ int main()
                             cin >> w;
                             cout << "Hasil String  : " << w << endl;
                         }
+                        
+                        if (golchar != 3) {
+                            cout << "\nTekan Enter untuk melanjutkan...";
+                            cin.ignore();
+                            cin.get();
+                        }
+                        
                     } while (golchar != 3);
                 }
                 else if (submenu1 == 3){
@@ -352,6 +418,14 @@ int main()
                         cout << "4. Kembali Ke Menu Sebelumnya" << endl;
                         cout << "Pilih (1-4) : " << endl;
                         cin >> date_time;
+                        
+                        if (cin.fail() || date_time < 1 || date_time > 4)
+                        {
+                            cout << "Input tidak valid! Harap masukkan angka 1-4." << endl;
+                            cin.clear();
+                            cin.ignore(1000, '\n');
+                            continue;
+                        }
                         
                         time_t now = time(0);
                         tm *local = localtime (&now);
@@ -373,6 +447,13 @@ int main()
                             cout << "=== Tanggal Waktu ===" << endl;
                             cout << "Tanggal Waktu  : "  << local->tm_mday << "/" << (1 + local->tm_mon) << "/" << (1900 + local->tm_year) << " " << local->tm_hour << ":" << local->tm_min << ":" << local->tm_sec << endl;
                         }
+                        
+                        if (date_time != 4) {
+                            cout << "\nTekan Enter untuk melanjutkan...";
+                            cin.ignore();
+                            cin.get();
+                        }
+                        
                     } while (date_time != 4);
                 }
                 
@@ -400,7 +481,18 @@ int main()
                     
                     cout << angka << " genap? " << isGenap << endl;
                     cout << angka << " positif? " << isPositif << endl;
+                    
+                    cout << "\nTekan Enter untuk melanjutkan...";
+                    cin.ignore();
+                    cin.get();
                 }
+                
+                if (submenu1 != 5) {
+                    cout << "\nTekan Enter untuk melanjutkan...";
+                    cin.ignore();
+                    cin.get();
+                }
+                
             } while(submenu1 != 5);
         }
         
@@ -417,6 +509,14 @@ int main()
                 cout << "6. Kembali Ke Menu Utama" << endl;
                 cout << "Pilih: ";
                 cin >> percabanganMenu;
+                
+                if (cin.fail() || percabanganMenu < 1 || percabanganMenu > 6)
+                {
+                    cout << "Input tidak valid! Harap masukkan angka 1-6." << endl;
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    continue;
+                }
                 
                 if (percabanganMenu >= 1 && percabanganMenu <= 5) {
                     int nilai;
@@ -491,6 +591,13 @@ int main()
                         cout << "Bilangan " << nilai << " adalah " << jenis << endl;
                     }
                 }
+                
+                if (percabanganMenu != 6) {
+                    cout << "\nTekan Enter untuk melanjutkan...";
+                    cin.ignore();
+                    cin.get();
+                }
+                
             } while(percabanganMenu != 6);
         }
         
@@ -505,6 +612,14 @@ int main()
                 cout << "4. Kembali Ke Menu Utama" << endl;
                 cout << "Pilih (1-4)  : " << endl;
                 cin >> menuperulangan;
+                
+                if (cin.fail() || menuperulangan < 1 || menuperulangan > 4)
+                {
+                    cout << "Input tidak valid! Harap masukkan angka 1-4." << endl;
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    continue;
+                }
                 
                 if (menuperulangan == 1) {
                     
@@ -535,6 +650,13 @@ int main()
                         counter++;
                     } while(counter <= 10);
                 }
+                
+                if (menuperulangan != 4) {
+                    cout << "\nTekan Enter untuk melanjutkan...";
+                    cin.ignore();
+                    cin.get();
+                }
+                
             } while(menuperulangan != 4);
         }
         
@@ -547,6 +669,14 @@ int main()
                 cout << "3. Kembali Ke Menu Utama" << endl;
                 cout << "Pilih (1-3)  : " << endl;
                 cin >> arrayMenu;
+                
+                if (cin.fail() || arrayMenu < 1 || arrayMenu > 3)
+                {
+                    cout << "Input tidak valid! Harap masukkan angka 1-3." << endl;
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    continue;
+                }
                 
                 if(arrayMenu == 1) {
                     // ARRAY 1 DIMENSI
@@ -581,12 +711,15 @@ int main()
                         cout << endl;
                     }
                 }
+                
+                if (arrayMenu != 3) {
+                    cout << "\nTekan Enter untuk melanjutkan...";
+                    cin.ignore();
+                    cin.get();
+                }
+                
             } while(arrayMenu != 3);
         }
-        
-        cout << "\nTekan Enter untuk melanjutkan...";
-        cin.ignore();
-        cin.get();
     }
     
     return 0;
